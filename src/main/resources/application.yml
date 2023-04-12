@@ -1,0 +1,14 @@
+spring:
+  h2:    console:      enabled: true
+  application:    name: RestAPI
+  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password: 
+#    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/restapi
+    username: restapi
+    password: restapi
+#    driver-class-name: org.h2.Driver
+  jpa:    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:      ddl-auto: update
