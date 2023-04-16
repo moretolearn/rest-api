@@ -35,16 +35,16 @@ public class EmployeeController {
 	
 	@PostMapping("/add")
 	public Employee addEmployee(@Valid @RequestBody Employee employee) {
-		EmployeeBuilder builder = Employee.builder();
-		Employee build = builder.empId(3).build();
-		return employeeRepository.save(build);
+		System.err.println(employee);
+		return employeeRepository.save(employee);
 	}
 
 	@PreAuthorize("hasAuthority('USER')")
 //	@RolesAllowed("ADMIN")
 	@GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Employee> getEmployees() {
-		return employeeRepository.findAll();
+//		return employeeRepository.findAll();
+		return employeeRepository.getCustomAllEmployees();
 	}
 	
 	@PreAuthorize("hasAuthority('ADMIN')")

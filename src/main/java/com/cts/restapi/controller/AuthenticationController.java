@@ -32,6 +32,12 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.authenticate(request));
   }
-
+  
+  
+  public String test(
+	      @RequestBody AuthenticationRequest request
+	  ) {
+	    return "Success";
+	  }
 
 }

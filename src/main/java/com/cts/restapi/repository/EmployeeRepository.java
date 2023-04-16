@@ -8,9 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.cts.restapi.dto.EmployeeDto;
 import com.cts.restapi.models.Employee;
+import com.cts.restapi.repository.custom.EmployeeCustomRepository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> , EmployeeCustomRepository{
 
 //	@Query("select s.empName as name,s.empSal as salary from Employee s")
 //	@Query(value = "select s.emp_name as name,s.emp_sal as salary from employee s",nativeQuery=true)
